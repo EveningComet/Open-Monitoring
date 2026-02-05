@@ -1,0 +1,7 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    padding: auto;
+    margin: auto;
+}
