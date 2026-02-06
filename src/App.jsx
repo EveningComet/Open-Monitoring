@@ -10,7 +10,6 @@ import Resources from './pages/Resources'
 
 function App()
 {
-
   return (
     <>
       <h1>

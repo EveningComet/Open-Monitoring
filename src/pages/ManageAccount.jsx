@@ -1,3 +1,5 @@
+import AccountInputField from '../components/account-management/AccountInputField';
+import ChangeAccountMenu from '../components/account-management/ChangeAccountMenu';
 import InputField from '../components/InputField'
 
 /**
@@ -6,6 +8,10 @@ import InputField from '../components/InputField'
  */
 function ManageAccount()
 {
+    function onAccountInput(account)
+    {
+        console.log("ManageAccount :: Account inputted: ", account);
+    }
     return(
         <div>
             <h2>Manage Account</h2>
@@ -13,19 +19,9 @@ function ManageAccount()
             {/**
              * The input that is used to find/get accounts
              */}
-             <InputField
-                type='text'
-             />
+             <AccountInputField onAccountInput={onAccountInput}/>
 
-            {/**
-             * TODO: Mini NavigationBar for jumping between the parts of an account.
-             */}
-             {/**
-              * TODO: 
-              */}
-             {/**
-              * TODO: Huge convenience. Option to select all codes for that contact the customer, but don't dispatch anyone. 
-              */}
+            <ChangeAccountMenu accountToChange={onAccountInput} />
         </div>
     );
 }
