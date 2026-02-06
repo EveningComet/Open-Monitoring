@@ -4,6 +4,6 @@
 export class DealerAccount
 {
     name = "New Dealer";
-    customerAccounts
-    templates
+    customerAccounts;
+    templates;
 }

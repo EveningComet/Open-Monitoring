@@ -1,11 +1,16 @@
 export class CustomerAccount
 {
     /**
+     * How this account is accessed.
+     */
+    account;
+
+    /**
      * The customer's name.
      */
     name = "New Customer"
     
-    address = "New Address";    
+    address = "New Address";  
 
     /**
      * These are the people called after the authorities have been

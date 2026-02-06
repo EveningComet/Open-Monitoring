@@ -1,8 +1,20 @@
+import InputField from '../components/InputField'
+
+/**
+ * This is where the user will actually edit or create new accounts.
+ * @returns 
+ */
 function ManageAccount()
 {
     return(
         <div>
             <h2>Manage Account</h2>
+
+            {/**
+             * The input that is used to find/get accounts
+             */}
+             <InputField />
+
             {/**
              * TODO: Mini NavigationBar for jumping between the parts of an account.
              */}
