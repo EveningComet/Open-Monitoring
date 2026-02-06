@@ -17,4 +17,14 @@ export class AlarmCode
      * Alarms on the template will not have this.
      */
     associatedComments;
+
+    /**
+     * For codes inside a template, this will be blank.
+     */
+    zone;
+
+    /**
+     * The time this alarm was received. Not used by codes in the template.
+     */
+    timeReceived;
 }

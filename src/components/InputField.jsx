@@ -3,13 +3,16 @@
  * @param {*} param0 
  * @returns 
  */
-function InputField( {value, label, name, placeHolder, type, onChanged })
+function InputField( {value, label, name, placeHolder, type, onChange })
 {
     return(
         <input
             name={name}
+            type={type}
             value={value}
-            onChange={onChanged}
+            label={label}
+            placeHolder={placeHolder}
+            onChange={onChange}
         >
         </input>
     )

@@ -1,10 +1,8 @@
-.navbar {
+.alarmHistorySearchBar
+{
     display: flex;
     flex-direction: row;
     align-items: center;
     place-content: center;
     column-gap: 10px;
-    width: 100%; /* Span the entire width of the screen*/
-    padding: auto;
-    margin: auto;
 }

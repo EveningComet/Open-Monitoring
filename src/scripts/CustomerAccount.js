@@ -19,10 +19,15 @@ export class CustomerAccount
     postDispatchCallList = [];
 
     /**
+     * The preset group of codes, with handling, if desired.
+     */
+    template;
+
+    /**
      * The codes currently on this account that are being
      * overridden.
      */
-    codes;
+    overriddenCodes;
 
     zones; // TODO: Figure out zone data structure.
 }

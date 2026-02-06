@@ -13,7 +13,9 @@ function ManageAccount()
             {/**
              * The input that is used to find/get accounts
              */}
-             <InputField />
+             <InputField
+                type='text'
+             />
 
             {/**
              * TODO: Mini NavigationBar for jumping between the parts of an account.
