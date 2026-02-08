@@ -1,6 +1,7 @@
+import CustomerAccount from '../scripts/CustomerAccount'
 import AccountInputField from '../components/account-management/AccountInputField';
 import ChangeAccountMenu from '../components/account-management/ChangeAccountMenu';
-import InputField from '../components/InputField'
+import { useState } from 'react';
 
 /**
  * This is where the user will actually edit or create new accounts.
@@ -8,20 +9,35 @@ import InputField from '../components/InputField'
  */
 function ManageAccount()
 {
-    function onAccountInput(account)
+    let [accountToEdit, setAccountToEdit] = useState(null);
+    let [isEditingAccount, setIsEditingAccount] = useState(false);
+
+    function onAccountInput(accountID)
     {
-        console.log("ManageAccount :: Account inputted: ", account);
+        // TODO: Simulate searching the database for the account.
+        
+        // Create an object for a new account
+        let newAccount = new CustomerAccount();
+        setAccountToEdit(newAccount);
+        setIsEditingAccount(true);
+        console.log("ManageAccount :: Account ID, ", accountID, ".\nobject: ", accountToEdit);
     }
+
     return(
         <div>
-            <h2>Manage Account</h2>
+            <div>
+                <h2>Manage Account</h2>
 
-            {/**
-             * The input that is used to find/get accounts
-             */}
-             <AccountInputField onAccountInput={onAccountInput}/>
+                {/**
+                * The input that is used to find/get accounts
+                */}
+                <AccountInputField onAccountInput={onAccountInput}/>
+            </div>
 
-            <ChangeAccountMenu accountToChange={onAccountInput} />
+             <ChangeAccountMenu
+                    accountToEdit={accountToEdit}
+                    isEditingAccount={isEditingAccount}
+            />
         </div>
     );
 }

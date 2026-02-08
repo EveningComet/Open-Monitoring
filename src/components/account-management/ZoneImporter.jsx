@@ -6,7 +6,7 @@ import { useState } from "react";
  * @param {*} param0 
  * @returns 
  */
-function ZoneImporter( {accountToChange} )
+function ZoneImporter( {zones} )
 {
     let [fileData, setFileData] = useState('');
 
@@ -21,12 +21,17 @@ function ZoneImporter( {accountToChange} )
 
     return(
         <div>
+            <h4>Zone Importer</h4>
+            <p>
+                This is the zone importer. If your account has a ton of zones, or you entered them
+                ahead of time, you can import them here.
+            </p>
             <div>
                 <InputField
                     type='file'
                     onChange={onFileChanged}
+                    accept='.csv'
                 />
-
                 {/* TODO: Zone import preview. */}
             </div>
 

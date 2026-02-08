@@ -10,7 +10,7 @@ function AlarmHistory()
     }
 
     return(
-        <div>
+        <div className="displayedPage">
             <h2>Alarm History</h2>
 
             <TextDisclaimer

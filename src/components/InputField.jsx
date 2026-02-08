@@ -3,7 +3,7 @@
  * @param {*} param0 
  * @returns 
  */
-function InputField( {value, label, name, placeHolder, type, onChange, onKeyDown })
+function InputField( {value, label, name, placeholder, type, onChange, onKeyDown, accept })
 {
     return(
         <input
@@ -11,8 +11,9 @@ function InputField( {value, label, name, placeHolder, type, onChange, onKeyDown
             type={type}
             value={value}
             label={label}
-            placeHolder={placeHolder}
+            placeholder={placeholder}
             onChange={onChange}
+            accept={accept}
             onKeyDown={onKeyDown}
         >
         </input>

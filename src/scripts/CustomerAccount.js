@@ -1,9 +1,9 @@
-export class CustomerAccount
+export default class CustomerAccount
 {
     /**
      * How this account is accessed.
      */
-    account;
+    accountID;
 
     /**
      * The customer's name.
@@ -30,4 +30,10 @@ export class CustomerAccount
     overriddenCodes;
 
     zones; // TODO: Figure out zone data structure.
+
+    /**
+     * The list of comments for this customer. This is for things such as
+     * a gate code, special notes, etc.
+     */
+    comments;
 }

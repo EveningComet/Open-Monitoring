@@ -1,13 +1,18 @@
 import { useState } from "react";
 import InputField from "../InputField";
 
+/**
+ * Simply tracks the user's input.
+ * @param {method} onAccountInput 
+ * @returns 
+ */
 function AccountInputField( {onAccountInput} )
 {
-    let[account, setAccount] = useState('');
+    let[accountID, setAccountID] = useState('');
 
     function handleAccountInput()
     {
-        if(!account.trim())
+        if(!accountID.trim())
         {
             alert("Please enter an account.");
             return;
@@ -15,15 +20,15 @@ function AccountInputField( {onAccountInput} )
 
         if(onAccountInput)
         {
-            onAccountInput(account);
+            onAccountInput(accountID);
         }
     }
 
     return(
         <InputField
             type="text"
-            value={account}
-            onChange={(e) => setAccount(e.target.value)}
+            value={accountID}
+            onChange={(e) => setAccountID(e.target.value)}
             onKeyDown={(e) => {
                 if(e.key === 'Enter')
                 {
