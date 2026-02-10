@@ -34,9 +34,9 @@ function ManageAccount()
                 <AccountInputField onAccountInput={onAccountInput}/>
             </div>
 
-             <ChangeAccountMenu
-                    accountToEdit={accountToEdit}
-                    isEditingAccount={isEditingAccount}
+            <ChangeAccountMenu
+                accountToEdit={accountToEdit}
+                isEditingAccount={isEditingAccount}
             />
         </div>
     );

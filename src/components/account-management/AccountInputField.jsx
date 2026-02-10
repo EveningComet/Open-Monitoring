@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputField from "../InputField";
+import SearchBar from "../miscellaneous/SearchBar";
 
 /**
  * Simply tracks the user's input.
@@ -25,17 +25,20 @@ function AccountInputField( {onAccountInput} )
     }
 
     return(
-        <InputField
-            type="text"
-            value={accountID}
-            onChange={(e) => setAccountID(e.target.value)}
-            onKeyDown={(e) => {
-                if(e.key === 'Enter')
-                {
-                    handleAccountInput();
-                }
-            }}
-        />
+        <div>
+            <p>Enter an account to edit or create.</p> 
+            <SearchBar
+                type="text"
+                value={accountID}
+                onChange={(e) => setAccountID(e.target.value)}
+                onKeyDown={(e) => {
+                    if(e.key === 'Enter')
+                    {
+                        handleAccountInput();
+                    }
+                }}
+            />
+        </div>
     )
 }
 

@@ -1,4 +1,4 @@
-export class AlarmTemplate
+export default class AlarmTemplate
 {
     /**
      * The name of the template.

@@ -1,5 +1,5 @@
 
-export class AlarmCode
+export default class AlarmCode
 {
     /**
      * This is the "code" for an alarm. For example,
@@ -11,7 +11,7 @@ export class AlarmCode
      * This is the human reacable name for an alarm.
      * E.g: Burglary, Fire, etc.
      */
-    alarmName = "";
+    name = "";
 
     /**
      * Alarms on the template will not have this.

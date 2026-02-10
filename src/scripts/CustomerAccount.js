@@ -10,7 +10,12 @@ export default class CustomerAccount
      */
     name = "New Customer"
     
-    address = "New Address";  
+    address = "New Address";
+
+    /**
+     * The day this account was placed online.
+     */
+    activationDate;
 
     /**
      * These are the people called after the authorities have been

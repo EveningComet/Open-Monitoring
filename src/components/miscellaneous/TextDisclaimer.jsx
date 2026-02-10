@@ -5,8 +5,12 @@
 function TextDisclaimer( {textToDisplay} )
 {
     return(
-        <p>{textToDisplay}</p>
-    )
+        <p
+            className="textDisclaimer"
+        >
+            {textToDisplay}
+        </p>
+    );
 }
 
 export default TextDisclaimer;

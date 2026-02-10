@@ -1,16 +1,15 @@
 import InputField from "../InputField";
 import { useState } from "react";
-import '../../styles/alarm-history-search-bar.css'
+import '../../styles/alarm-history.css'
+import SearchBar from "../miscellaneous/SearchBar";
 
 /**
- * The component that handles searching for alarms between set dates.
- * @returns 
+ * The component that holds the search bars for the alarm history.
  */
-function AlarmHistorySearchBar( {onAlarmHistoryRequested} )
+function AlarmHistorySearchBar( {queriedAccount, onQueryChanged, onAlarmHistoryRequested} )
 {
     // The dates will be updated based on the user's input
     // By default, the end date will be today
-    let [currAccount, setAccount] = useState('');
     let [startDate, setStartDate] = useState('');
     let [endDate, setEndDate]     = useState(getCurrentDate());
     
@@ -26,12 +25,12 @@ function AlarmHistorySearchBar( {onAlarmHistoryRequested} )
     function handleSearch()
     {
         console.log("AlarmHistorySearchBar :: OnAlarmHistoryRequested called. \n Curr account ",
-            currAccount, "start date: ", startDate, "end date: ", endDate
+            queriedAccount, "start date: ", startDate, "end date: ", endDate
         );
         if(onAlarmHistoryRequested)
         {
             // Validating the information here
-            if(!currAccount.trim())
+            if(!queriedAccount.trim())
             {
                 alert("Need an account.");
                 return;
@@ -49,18 +48,17 @@ function AlarmHistorySearchBar( {onAlarmHistoryRequested} )
                 return;
             }
             
-            onAlarmHistoryRequested(currAccount, startDate, endDate);
+            onAlarmHistoryRequested(queriedAccount, startDate, endDate);
         }
     }
 
     return(
         <div className="alarmHistorySearchBar">
             {/* The account to search */}
-            <p>Account To Search</p>
-            <InputField 
-                type='text'
-                value={currAccount}
-                onChange={(e) => setAccount(e.target.value)}
+            <SearchBar
+                labelText={"Account to search"}
+                query={queriedAccount}
+                onChange={onQueryChanged}
             />
 
 
@@ -73,13 +71,12 @@ function AlarmHistorySearchBar( {onAlarmHistoryRequested} )
             />
             
             {/* The end date*/}
-            <o>End Date</o>
+            <p>End Date</p>
             <InputField
                 type='date'
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
             />
-
 
             <button onClick={handleSearch}>Search</button>
         </div>

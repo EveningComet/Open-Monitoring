@@ -1,8 +1,0 @@
-.alarmHistorySearchBar
-{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    place-content: center;
-    column-gap: 10px;
-}
