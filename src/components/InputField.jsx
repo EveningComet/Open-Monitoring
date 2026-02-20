@@ -10,7 +10,6 @@ function InputField( {value, label, name, placeholder, type, onChange, onKeyDown
             name={name}
             type={type}
             value={value}
-            label={label}
             placeholder={placeholder}
             onChange={onChange}
             accept={accept}
